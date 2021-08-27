@@ -7,7 +7,7 @@
         :key="index"
         @click="clickOnShopButton(item.data, index)"
     >
-      <span class="shop-navigation__text">{{item.text}}</span>
+      <span class="shop-navigation__text" v-html="item.text"></span>
       <span class="shop-navigation__border"></span>
     </button>
   </div>
@@ -31,11 +31,11 @@ export default {
         data: 'kits'
       },
       {
-        text: 'Спецпредложения',
+        text: 'Спец<wbr>предложения',
         data: 'specials'
       },
       {
-        text: 'Промокоды',
+        text: 'Промо<wbr>код',
         data: 'promoCodes'
       }
     ],

@@ -29,6 +29,8 @@
     }
     &__buttons {
         display: flex;
+        height: 54px;
+        width: 139px;
         border-radius: 50px;
         align-items: center;
         justify-content: center;
@@ -183,6 +185,10 @@
             background-image: none;
         }
 
+        &__buttons {
+            width: 100%;
+            height: auto;
+        }
         &__container {
             width: calc(100% - 10px);
         }

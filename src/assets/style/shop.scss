@@ -118,6 +118,16 @@
     }
   }
 }
+@media screen and (min-width: 3839px) {
+  .background {
+    &__left-image {
+      width: 60%;
+    }
+    &__right-image {
+      width: 40%;
+    }
+  }
+}
 @media screen and (max-width: 1025px) {
   .shop {
     &__items-container {
