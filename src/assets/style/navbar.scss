@@ -1,0 +1,233 @@
+// main: style.scss
+
+.navbar {
+    width: 100%;
+    overflow-x: hidden;
+    height: 90px;
+    position: relative;
+    background-color: $black;
+    z-index: 2;
+    &::after {
+        background-image: url(../images/navbar/bgImage.png);
+        background-repeat: no-repeat;
+        width: 2067px;
+        height: 100%;
+        content: '';
+        opacity: 1;
+        position: absolute;
+        background-position: top -38px left -171px;
+        left: 0;
+        top: 0;
+    }
+    &__container {
+        max-width: 1286px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &__buttons {
+        display: flex;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 24px;
+        position: relative;
+        z-index: 3;
+        background-position: 0;
+        background-color: transparent;
+        border: 2px solid transparent;
+        transition: all .3s ease;
+        cursor: pointer;
+        &:hover {
+            border-color: rgba($lightBlue, .4);
+            background-color: rgba($lightBlue, .4);
+        }
+        &_home {
+            background-image: url("../images/navbar/buttonBorderRight.png");
+        }
+        &_back {
+            background-image: url("../images/navbar/buttonBorderLeft.png");
+        }
+    }
+    &__arrow {
+        height: calc(28px + 21px);
+        width: calc(28px + 21px);
+        margin-right: 10px;
+    }
+    &__button-text {
+        text-transform: uppercase;
+        color: $white;
+        font-family: $leksa, sans-serif;
+    }
+    &__link {
+        z-index: 100;
+    }
+    &__wallets {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+}
+
+.wallets {
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    background-color: rgba(#16151F, .5);
+    padding: 6px 20px 6px 61px;
+    width: 179px;
+    z-index: 1;
+    &:first-child {
+        margin-right: 78px;
+    }
+    &__image {
+        width: 70px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 13px;
+        top: 50%;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+    &__value {
+        font-family: $leksa, sans-serif;
+        color: $white;
+        font-size: 18px;
+    }
+    &__coin-name {
+        color: $blue;
+        font-size: 10px;
+        font-family: $roboto, sans-serif;
+    }
+    &__button-wrapper {
+        position: relative;
+    }
+    &__button-bg {
+        width: 25px;
+        height: 25px;
+        background: linear-gradient(90deg, #30C325 9.09%, #2C812A 100%);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        content: '';
+        left: 50%;
+        border-radius: 5px;
+        top: calc(50% + 3px);
+        z-index: -1;
+    }
+    &__button {
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $greenGradient;
+        border: 2px solid $green;
+        border-radius: 5px;
+        position: relative;
+        z-index: 1;
+        transition: all .3s ease;
+        &:hover {
+            transform: translateY(3px);
+        }
+        &:after {
+            position: absolute;
+            content: '';
+            width: 19px;
+            height: 19px;
+            background: $green;
+            filter: blur(20px);
+            border-radius: 5px;
+            left: 50%;
+            top: calc(50% + 1px);
+            transform: matrix(0, 1, 1, 0, 0, 0) translate(-50%, -50%);
+            z-index: 0;
+        }
+    }
+
+}
+@media screen and (max-width: 1025px) {
+    .navbar {
+        &__container {
+            max-width: 900px;
+        }
+    }
+    .wallets {
+        &:first-child {
+            margin-right: 48px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wallets {
+        &__image {
+            width: 50px;
+            left: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .navbar {
+        height: 50px;
+        background-color: $dark;
+        &::after {
+            background-image: none;
+        }
+
+        &__container {
+            width: calc(100% - 10px);
+        }
+        &__arrow {
+            margin-right: 0;
+        }
+        &__wallets {
+            transform: translateX(10px);
+        }
+        &__button-text {
+            display: none;
+        }
+        &__buttons_back, &__buttons_home {
+            background-image: none;
+        }
+        &__buttons {
+            padding: 0;
+            border: none;
+        }
+    }
+    .wallets {
+        width: 90px;
+        padding: 2px 0 2px 20px;
+
+        &:first-child {
+            margin-right: 26px;
+        }
+        &__coin-name {
+            display: none;
+        }
+        &__image {
+            width: 30px;
+            height: 30px;
+            left: 0;
+        }
+        &__value {
+            font-size: 13px;
+        }
+        &__button {
+            width: 20px;
+            height: 20px;
+        }
+        &__button-bg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

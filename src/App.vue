@@ -1,6 +1,6 @@
 <template>
   <TheNavbar
-      :navbarData="waletValue"
+      :navbarData="walletValue"
   />
   <router-view/>
 </template>
@@ -10,16 +10,16 @@ import TheNavbar from './components/Navbar/TheNavbar.vue'
 
 export default {
   data: () => ({
-    waletValue: [
+    walletValue: [
       {
         imagePath: 'coinIcon.png',
-        coinValue: '100 254',
+        coinValue: '100254',
         coinName: 'Coins',
         buyLink: '/buy-coins',
       },
       {
         imagePath: 'crystalsIcon.png',
-        coinValue: '1 254',
+        coinValue: '1254',
         coinName: 'Crystals',
         buyLink: '/buy-crystals'
       }
